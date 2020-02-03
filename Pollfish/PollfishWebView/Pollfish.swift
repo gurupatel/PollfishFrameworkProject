@@ -11,7 +11,7 @@ import UIKit
 import WebKit
 import AdSupport
 
-public protocol PollfishWebViewDelegate {
+public protocol PollfishDelegate {
     
     /* Delegate for Init */
     func panelOpened()
@@ -22,9 +22,9 @@ public protocol PollfishWebViewDelegate {
     func webViewFinishLoadingFailed()
 }
 
-public class PollfishWebView: UIView, WKNavigationDelegate {
+public class Pollfish: UIView, WKNavigationDelegate {
 
-    public var delegate: PollfishWebViewDelegate?
+    public var delegate: PollfishDelegate?
 
     enum Direction: Int {
         case FromLeft = 0
@@ -39,7 +39,7 @@ public class PollfishWebView: UIView, WKNavigationDelegate {
     public var indicator: UIActivityIndicatorView!
     public var contentView: UIView!
     public var webView: WKWebView!
-    public var linkStr: String = ""
+    public var link: String = ""
     public var param1: String = ""
     public var param2: String = ""
     public var param3: String = "PARAM 3"
@@ -162,7 +162,7 @@ public class PollfishWebView: UIView, WKNavigationDelegate {
     public func addWebView() {
                     
         /* Removing black spaces from the link, if any */
-        let urlNew:String = linkStr.replacingOccurrences(of: " ", with: "%20")
+        let urlNew:String = link.replacingOccurrences(of: " ", with: "%20")
         
         let url = NSURL (string: urlNew)
 

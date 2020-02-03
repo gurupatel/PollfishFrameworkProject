@@ -10,6 +10,9 @@
 		422F2C7823DFF5A100DE41D1 /* Pollfish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422F2C6E23DFF5A100DE41D1 /* Pollfish.framework */; };
 		422F2C7D23DFF5A100DE41D1 /* PollfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F2C7C23DFF5A100DE41D1 /* PollfishTests.swift */; };
 		422F2C7F23DFF5A100DE41D1 /* Pollfish.h in Headers */ = {isa = PBXBuildFile; fileRef = 422F2C7123DFF5A100DE41D1 /* Pollfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		422F2C8A23DFF69400DE41D1 /* Pollfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F2C8923DFF69400DE41D1 /* Pollfish.swift */; };
+		42353EEE23E446A900677F0E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42353EEC23E446A900677F0E /* Reachability.swift */; };
+		42353EEF23E446A900677F0E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42353EED23E446A900677F0E /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		422F2C7723DFF5A100DE41D1 /* PollfishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PollfishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422F2C7C23DFF5A100DE41D1 /* PollfishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollfishTests.swift; sourceTree = "<group>"; };
 		422F2C7E23DFF5A100DE41D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422F2C8923DFF69400DE41D1 /* Pollfish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pollfish.swift; sourceTree = "<group>"; };
+		42353EEC23E446A900677F0E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		42353EED23E446A900677F0E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		422F2C7023DFF5A100DE41D1 /* Pollfish */ = {
 			isa = PBXGroup;
 			children = (
+				422F2C8823DFF68300DE41D1 /* PollfishWebView */,
 				422F2C7123DFF5A100DE41D1 /* Pollfish.h */,
 				422F2C7223DFF5A100DE41D1 /* Info.plist */,
 			);
@@ -84,6 +91,16 @@
 				422F2C7E23DFF5A100DE41D1 /* Info.plist */,
 			);
 			path = PollfishTests;
+			sourceTree = "<group>";
+		};
+		422F2C8823DFF68300DE41D1 /* PollfishWebView */ = {
+			isa = PBXGroup;
+			children = (
+				42353EED23E446A900677F0E /* Helper.swift */,
+				42353EEC23E446A900677F0E /* Reachability.swift */,
+				422F2C8923DFF69400DE41D1 /* Pollfish.swift */,
+			);
+			path = PollfishWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +165,7 @@
 				TargetAttributes = {
 					422F2C6D23DFF5A000DE41D1 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					422F2C7623DFF5A100DE41D1 = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42353EEE23E446A900677F0E /* Reachability.swift in Sources */,
+				422F2C8A23DFF69400DE41D1 /* Pollfish.swift in Sources */,
+				42353EEF23E446A900677F0E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +361,7 @@
 		422F2C8323DFF5A100DE41D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -347,14 +369,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Pollfish/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pollfish.test.Pollfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pollfish.test;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +388,7 @@
 		422F2C8423DFF5A100DE41D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -370,14 +396,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Pollfish/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pollfish.test.Pollfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pollfish.test;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -386,6 +414,7 @@
 		422F2C8623DFF5A100DE41D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PollfishTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +432,7 @@
 		422F2C8723DFF5A100DE41D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PollfishTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

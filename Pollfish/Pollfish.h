@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class PollfishWebView;
+
+@class Helper;
+
+@class Reachability;
+
 //! Project version number for Pollfish.
 FOUNDATION_EXPORT double PollfishVersionNumber;
 

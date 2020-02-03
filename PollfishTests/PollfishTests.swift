@@ -2,12 +2,12 @@
 //  PollfishTests.swift
 //  PollfishTests
 //
-//  Created by Ayopop on 28/01/20.
+//  Created by Gaurang Patel on 01/02/20.
 //  Copyright © 2020 Pollfish. All rights reserved.
 //
 
 import XCTest
-@testable import Pollfish
+//@testable import Pollfish
 
 class PollfishTests: XCTestCase {
 
